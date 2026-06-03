@@ -11,13 +11,28 @@ void main() {
     expect(find.text('Redes y Telecomunicaciones'), findsOneWidget);
   });
 
-  testWidgets('Module card tap opens detail page', (WidgetTester tester) async {
+  testWidgets('All module cards are displayed', (WidgetTester tester) async {
     await tester.pumpWidget(const MyApp());
 
-    await tester.tap(find.text('Desarrollo de Software'));
-    await tester.pumpAndSettle();
+    expect(find.text('Desarrollo de Software'), findsOneWidget);
+    expect(find.text('Redes y Telecomunicaciones'), findsOneWidget);
+    expect(find.text('Trabajos Freelancer'), findsOneWidget);
+  });
 
-    expect(find.text('Soluciones a medida'), findsOneWidget);
-    expect(find.text('Solicitar este servicio'), findsOneWidget);
+  testWidgets('Works banner is displayed', (WidgetTester tester) async {
+    await tester.pumpWidget(const MyApp());
+
+    expect(find.text('Trabajos Realizados'), findsOneWidget);
+    expect(find.text('10 proyectos completados'), findsOneWidget);
+  });
+
+  testWidgets('Works page opens from banner', (WidgetTester tester) async {
+    await tester.pumpWidget(const MyApp());
+
+    await tester.tap(find.text('Trabajos Realizados'));
+    await tester.pump();
+    await tester.pump(const Duration(seconds: 1));
+
+    expect(find.text('Sistema de Ventas POS'), findsOneWidget);
   });
 }
