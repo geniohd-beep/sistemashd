@@ -148,4 +148,24 @@ final List<Module> modules = [
     icon: Icons.lightbulb,
     color: Color(0xFF607D8B),
   ),
+  Module(
+    title: 'Trabajos Freelancer',
+    subtitle: 'Soluciones informáticas generales',
+    description:
+        'Servicios informáticos integrales como freelancer, cubriendo desde '
+        'la reparación de equipos hasta la recuperación de datos en '
+        'diversos dispositivos de almacenamiento.',
+    services: [
+      'Recuperación de datos en HDD y SSD',
+      'Recuperación de datos en USB y SD',
+      'Recuperación de datos en discos externos',
+      'Formateo e instalación de SO (Windows, Linux)',
+      'Eliminación de virus y malware',
+      'Respaldo y migración de información',
+      'Actualización y ensamblaje de PC',
+      'Limpieza física y mantenimiento preventivo',
+    ],
+    icon: Icons.handyman,
+    color: Color(0xFF795548),
+  ),
 ];
